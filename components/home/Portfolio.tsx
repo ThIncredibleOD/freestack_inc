@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
-import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import ProjectCard from "../ui/ProjectCard";
+import { projects } from "@/data/project";
 
 export default function Portfolio() {
   return (
@@ -18,60 +19,10 @@ export default function Portfolio() {
         </Link>
       </div>
 
-      <ul>
-        <li className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
-          <div className="bg-[hsla(52,40%,36%,1)] flex items-center justify-center w-fit p-8 rounded-xl">
-            <div className="">
-              <Image
-                src="/works/humanity-desktop.png"
-                height={250}
-                width={250}
-                alt="work image"
-              />
-            </div>
-            <div className="-ml-10 mt-10">
-              <Image
-                src="/works/humanity-mobile.png"
-                height={80}
-                width={80}
-                alt="work image"
-              />
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-2 md:gap-4">
-            <div className="text-sm md:text-md bg-[hsla(207,90%,61%,0.1)] py-1 px-2 w-fit md:py-2 md:px-4 rounded-full">
-              Ecommerce. Branding
-            </div>
-            <h3 className="font-montserrat text-xl md:text-2xl font-bold">
-              Humanity Fashion Website
-            </h3>
-            <p className="text-sm md:text-md text-[hsla(215,16%,47%,1)]">
-              Crafting a memorable digital identity and a blazing-fast,
-              high-converting checkout experience for a global apparel brand.
-            </p>
-
-            <div className="flex gap-4">
-              <div className="bg-[hsla(212,52%,14%,0.1)] w-fit py-1 px-2 md:py-2 md:px-4 rounded-full">
-                Branding
-              </div>
-              <div className="bg-[hsla(212,52%,14%,0.1)] w-fit py-1 px-2 md:py-2 md:px-4 rounded-full">
-                Figma
-              </div>
-              <div className="bg-[hsla(212,52%,14%,0.1)] w-fit py-1 px-2 md:py-2 md:px-4 rounded-full">
-                Next.js
-              </div>
-            </div>
-
-            <Link
-              href="/#"
-              className="flex gap-2 items-center text-[hsla(212,80%,42%,1)] hover:underline mt-5 md:mt-0"
-            >
-              Read Case Study
-              <ArrowUpRight size={18} strokeWidth={3} />
-            </Link>
-          </div>
-        </li>
+      <ul className="flex flex-col gap-6">
+        {projects.map((project) => {
+          return <ProjectCard key={project.id} project={project} />;
+        })}
       </ul>
     </section>
   );
