@@ -10,25 +10,25 @@ export default function CoreAreas() {
     {
       title: "Digital Infrastructure",
       description:
-        "websites, digital platforms, databases, registration systems, and digital player profiles.",
+        "Websites, Digital Platforms, Databases, Registration Systems, and Digital Player Profiles.",
       icon: CodeXml,
     },
     {
       title: "Creative & Media",
       description:
-        "photography, videography, matchday content, graphics, social media management, interviews, and storytelling.",
+        "Photography, Videography, Matchday Content, Graphics, Social Media Management, Interviews, and Storytelling.",
       icon: Camera,
     },
     {
       title: "Performance & Data Analysis",
       description:
-        "match statistics, player performance reports, opposition analysis, video analysis, and data-driven player development.",
+        "Match Statistics, Player Performance Reports, Opposition Analysis, Video Analysis, and Data-Driven Player Development.",
       icon: ChartNoAxesColumnIncreasing,
     },
     {
       title: "Digital Branding & Communication",
       description:
-        "strengthening an academy’s online presence and presenting its players, teams, achievements, and activities professionally.",
+        "Strengthening an Academy’s Online Presence and Presenting its Players, Teams, Achievements, and Activities Professionally.",
       icon: Megaphone,
     },
   ];

@@ -77,33 +77,44 @@ export default function OurServices() {
       <ul className="flex flex-col gap-6">
         {services.map((service, index) => {
           return (
-            <li key={index} className="flex flex-col gap-4">
+            <li
+              key={index}
+              className="group flex w-full flex-col gap-4 rounded-xl border border-transparent p-4 transition-[transform,background-color,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-[hsla(207,90%,61%,0.35)] hover:bg-[hsla(207,90%,61%,0.08)] hover:shadow-xl md:p-6 motion-reduce:transition-none motion-reduce:hover:transform-none"
+            >
               <div className="relative w-full h-50 rounded-xl overflow-hidden lg:flex-1">
-                <Image src={service.img} alt="" fill className="object-cover" />
+                <Image
+                  src={service.img}
+                  alt=""
+                  fill
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                />
+                <div className="absolute inset-0 bg-[hsla(212,80%,42%,0.08)] transition-colors duration-300 group-hover:bg-[hsla(212,80%,42%,0.2)] motion-reduce:transition-none" />
               </div>
-              <div className="text-sm md:text-md bg-[hsla(207,90%,61%,0.1)] w-fit py-1 px-2 md:py-2 md:px-4 rounded-full">
-                {service.category.number} / {service.category.label}
-              </div>
-              <h3 className="font-montserrat text-xl font-bold">
-                {service.title}
-              </h3>
-              <p className="text-[hsla(215,16%,47%,1)]">
-                {service.description}
-              </p>
+              <div className="flex flex-col gap-4 transition-transform duration-300 ease-out group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0">
+                <div className="text-sm md:text-md bg-[hsla(207,90%,61%,0.1)] w-fit py-1 px-2 md:py-2 md:px-4 rounded-full">
+                  {service.category.number} / {service.category.label}
+                </div>
+                <h3 className="font-montserrat text-xl font-bold">
+                  {service.title}
+                </h3>
+                <p className="text-[hsla(215,16%,47%,1)]">
+                  {service.description}
+                </p>
 
-              <div className="flex flex-wrap gap-2">
-                {service.highlights.map((highlight, i) => {
-                  return (
-                    <div key={i} className="flex gap-2 items-center">
-                      <p className=" text-sm">{highlight}</p>
-                      <p
-                        className={`${i === service.highlights.length - 1 ? "hidden" : "block"}`}
-                      >
-                        &bull;
-                      </p>
-                    </div>
-                  );
-                })}
+                <div className="flex flex-wrap gap-2">
+                  {service.highlights.map((highlight, i) => {
+                    return (
+                      <div key={i} className="flex gap-2 items-center">
+                        <p className=" text-sm">{highlight}</p>
+                        <p
+                          className={`${i === service.highlights.length - 1 ? "hidden" : "block"}`}
+                        >
+                          &bull;
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </li>
           );

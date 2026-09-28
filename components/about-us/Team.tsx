@@ -1,11 +1,13 @@
+import Image from "next/image";
+
 export default function Team() {
   const members = [
     {
-      name: "Obinka Victor",
-      title: "Founder",
+      name: "Ayinde Eyitayo Odunayo",
+      title: "Director",
       description:
-        "Architecting seamless user experiences and scalable design systems for modern sports platforms. (short Bio)",
-      pic: "",
+        "Architecting seamless user experiences and scalable design systems for modern sports platforms.",
+      pic: "/about-us/ayinde-eyitayo-odunayo.jpg",
     },
     {
       name: "Obinka Victor",
@@ -36,7 +38,16 @@ export default function Team() {
               key={index}
               className="bg-[hsla(212,52%,14%,1)] flex flex-col gap-4 p-12 rounded-2xl w-full lg:w-[calc(50%-12px)] max-w-137.5"
             >
-              <div className="bg-[hsla(0,0%,85%,1)] h-60 w-full rounded-2xl"></div>
+              <div className="relative h-60 w-full overflow-hidden rounded-2xl bg-black">
+                {member.pic ? (
+                  <Image
+                    src={member.pic}
+                    alt={member.name}
+                    fill
+                    className="object-cover object-center"
+                  />
+                ) : null}
+              </div>
 
               <h3 className="font-montserrat text-white text-xl font-bold">
                 {member.name}
