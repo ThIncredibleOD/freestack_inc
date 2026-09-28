@@ -74,36 +74,41 @@ export default function OurServices() {
         Our Services
       </h2>
 
-      <ul className="flex flex-col gap-6">
+      <ul className="flex flex-col gap-6 lg:gap-10">
         {services.map((service, index) => {
           return (
-            <li key={index} className="flex flex-col gap-4">
+            <li
+              key={index}
+              className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-4 lg:gap-8`}
+            >
               <div className="relative w-full h-50 rounded-xl overflow-hidden lg:flex-1">
                 <Image src={service.img} alt="" fill className="object-cover" />
               </div>
-              <div className="text-sm md:text-md bg-[hsla(207,90%,61%,0.1)] w-fit py-1 px-2 md:py-2 md:px-4 rounded-full">
-                {service.category.number} / {service.category.label}
-              </div>
-              <h3 className="font-montserrat text-xl font-bold">
-                {service.title}
-              </h3>
-              <p className="text-[hsla(215,16%,47%,1)]">
-                {service.description}
-              </p>
+              <div className="flex flex-col gap-4 lg:flex-1">
+                <div className="text-sm md:text-md bg-[hsla(207,90%,61%,0.1)] w-fit py-1 px-2 md:py-2 md:px-4 rounded-full">
+                  {service.category.number} / {service.category.label}
+                </div>
+                <h3 className="font-montserrat text-xl font-bold">
+                  {service.title}
+                </h3>
+                <p className="text-[hsla(215,16%,47%,1)]">
+                  {service.description}
+                </p>
 
-              <div className="flex flex-wrap gap-2">
-                {service.highlights.map((highlight, i) => {
-                  return (
-                    <div key={i} className="flex gap-2 items-center">
-                      <p className=" text-sm">{highlight}</p>
-                      <p
-                        className={`${i === service.highlights.length - 1 ? "hidden" : "block"}`}
-                      >
-                        &bull;
-                      </p>
-                    </div>
-                  );
-                })}
+                <div className="flex flex-wrap gap-2 ">
+                  {service.highlights.map((highlight, i) => {
+                    return (
+                      <div key={i} className="flex gap-2 items-center">
+                        <p className=" text-sm">{highlight}</p>
+                        <p
+                          className={`${i === service.highlights.length - 1 ? "hidden" : "block"}`}
+                        >
+                          &bull;
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </li>
           );

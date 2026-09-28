@@ -20,12 +20,12 @@ export default function OurStory() {
     <section className="flex flex-col gap-4 p-4 md:p-8 lg:p-16">
       <h2 className="font-montserrat text-2xl font-bold">Our Story</h2>
 
-      <ul className="flex flex-col gap-6">
+      <ul className="flex flex-col gap-6 lg:gap-10">
         {ourStories.map((story, index) => {
           return (
             <li
               key={index}
-              className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}  gap-4`}
+              className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}  gap-4 lg:gap-8`}
             >
               <div className="flex flex-col gap-4 lg:flex-1">
                 <h3 className="font-montserrat text-xl font-bold">
