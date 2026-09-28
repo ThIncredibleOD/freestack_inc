@@ -2,18 +2,19 @@ export default function Hero() {
   return (
     <section className="flex flex-col gap-2 md:gap-6 min-h-120 bg-[url('/hero-background.png')] md:bg-cover bg-left md:bg-center p-4 md:p-8 lg:p-16">
       <div className="text-sm md:text-md bg-[hsla(207,90%,61%,0.1)] w-fit py-1 px-2 md:py-2 md:px-4 rounded-full">
-        END-TO-END DIGITAL AGENCY
+        FOOTBALL, BUILT FOR THE DIGITAL AGE
       </div>
 
       <h1 className="font-montserrat text-5xl/15 md:text-6xl/18 font-bold md:max-w-2xl">
-        Building Digital Experiences from{" "}
-        <span className="text-[hsla(212,80%,42%,1)]">Design to Deployment</span>
+         A Stronger Team <br />
+        <span className="text-[hsla(212,80%,42%,1)]">On and Off the <br /> Pitch</span>
       </h1>
 
       <p className="text-[hsla(215,16%,47%,1)] md:max-w-2xl">
-        We craft intuitive user interfaces and architect robust software
-        solutions, turning your complex problems into scalable digital products.
-      </p>
+   FreeStack helps football academies, clubs, and sports organizations 
+   bring their digital presence, media, operations, and performance insights  <br />
+   together. <br />
+        </p>
 
       <div className="flex items-center gap-5 md:gap-10">
         <button className="bg-[hsla(212,80%,42%,1)] md:text-lg text-white p-2 lg:p-4 rounded-2xl cursor-pointer">
