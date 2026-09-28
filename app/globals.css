@@ -1,5 +1,33 @@
 @import "tailwindcss";
 
+@theme {
+  /* Brand palette — the existing site colours, named. */
+  --color-brand: hsl(212 80% 42%);
+  --color-brand-strong: hsl(212 80% 34%);
+  --color-accent: hsl(207 90% 61%);
+  --color-ink: hsl(212 52% 14%);
+  --color-muted: hsl(215 16% 47%);
+  --color-surface: hsl(210 40% 98%);
+  --color-line: hsl(213 27% 89%);
+  --color-online: hsl(120 61% 50%);
+
+  /* Readable body copy on the dark navy sections. */
+  --color-muted-invert: hsl(213 27% 78%);
+
+  --animate-rise: rise 0.16s ease-out;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(-0.375rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .font-montserrat {
   font-family: var(--font-montserrat);
 }
@@ -8,6 +36,36 @@
   font-family: var(--font-inter);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: hsla(0, 0%, 100%, 1);
+  color: var(--color-ink);
+}
+
+::selection {
+  background-color: var(--color-brand);
+  color: white;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

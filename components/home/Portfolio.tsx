@@ -41,25 +41,24 @@ export default function Portfolio() {
 
           <div className="flex flex-col gap-2 md:gap-4">
             <div className="text-sm md:text-md bg-[hsla(207,90%,61%,0.1)] py-1 px-2 w-fit md:py-2 md:px-4 rounded-full">
-              Ecommerce. Branding
+              Football
             </div>
             <h3 className="font-montserrat text-xl md:text-2xl font-bold">
-              Humanity Fashion Website
+              Peakline Sports
             </h3>
             <p className="text-sm md:text-md text-[hsla(215,16%,47%,1)]">
-              Crafting a memorable digital identity and a blazing-fast,
-              high-converting checkout experience for a global apparel brand.
+              A platform for teams to register for a football foundation cup  
             </p>
 
             <div className="flex gap-4">
               <div className="bg-[hsla(212,52%,14%,0.1)] w-fit py-1 px-2 md:py-2 md:px-4 rounded-full">
-                Branding
+                Foundation
               </div>
               <div className="bg-[hsla(212,52%,14%,0.1)] w-fit py-1 px-2 md:py-2 md:px-4 rounded-full">
-                Figma
+                Football
               </div>
               <div className="bg-[hsla(212,52%,14%,0.1)] w-fit py-1 px-2 md:py-2 md:px-4 rounded-full">
-                Next.js
+                Sports
               </div>
             </div>
 

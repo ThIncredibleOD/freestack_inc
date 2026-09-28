@@ -6,12 +6,14 @@ import {
   House,
   Menu,
   Users,
+  X,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useRef } from "react";
 import Dropdown from "../ui/Dropdown";
+import Button from "../ui/Button";
 
 export default function Header() {
   const [dropdown, setDropdown] = useState(false);
@@ -43,56 +45,74 @@ export default function Header() {
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <header className="h-20 flex items-center justify-between gap-4 py-1 p-4 md:px-8 lg:px-16">
-      <div className="relative flex shrink-0 items-center gap-4">
-        <button
-          ref={menuButtonRef}
-          type="button"
-          className="block cursor-pointer md:hidden"
-          onClick={() => setDropdown((prev) => !prev)}
-          aria-label="Open menu"
-          aria-expanded={dropdown}
-        >
-          <Menu />
-        </button>
+    <header className="sticky top-0 z-50 border-b border-line/70 bg-white/85 backdrop-blur-md">
+      <div className="mx-auto flex h-20 w-full max-w-[85rem] items-center justify-between gap-4 px-4 md:px-8 lg:px-16">
+        <div className="relative flex shrink-0 items-center gap-3">
+          <button
+            ref={menuButtonRef}
+            type="button"
+            className="-ml-2 cursor-pointer rounded-lg p-2 text-ink transition-colors hover:bg-surface md:hidden"
+            onClick={() => setDropdown((prev) => !prev)}
+            aria-label={dropdown ? "Close menu" : "Open menu"}
+            aria-expanded={dropdown}
+          >
+            {dropdown ? <X /> : <Menu />}
+          </button>
 
-        {dropdown && (
-          <Dropdown
-            itemList={dropdownNavItems}
-            handleClick={handleDropdown}
-            menuButtonRef={menuButtonRef}
-          />
-        )}
+          {dropdown && (
+            <Dropdown
+              itemList={dropdownNavItems}
+              handleClick={handleDropdown}
+              menuButtonRef={menuButtonRef}
+            />
+          )}
 
-        <Link href="/" className="cursor-pointer">
-          <Image
-            src="/logo.png"
-            alt="Logo"
-            width={120}
-            height={120}
-            className="h-25 w-25 object-contain md:h-30 md:w-30"
-          />
-        </Link>
+          <Link
+            href="/"
+            className="cursor-pointer rounded-lg transition-opacity hover:opacity-80"
+            aria-label="FreeStack home"
+          >
+            <Image
+              src="/logo.png"
+              alt="FreeStack"
+              width={240}
+              height={101}
+              className="h-10 w-auto md:h-12"
+            />
+          </Link>
+        </div>
+
+        <nav className="hidden md:block">
+          <ul className="flex items-center gap-8 lg:gap-10">
+            {navItems.map((item) => {
+              const active = item.href === pathname;
+
+              return (
+                <li key={item.id}>
+                  <Link
+                    href={item.href}
+                    aria-current={active ? "page" : undefined}
+                    className={`group relative inline-block py-1 transition-colors lg:text-lg ${
+                      active ? "font-medium text-ink" : "text-muted hover:text-ink"
+                    }`}
+                  >
+                    {item.name}
+                    <span
+                      className={`absolute -bottom-0.5 left-0 h-0.5 w-full origin-left rounded-full bg-brand transition-transform duration-200 ${
+                        active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                      }`}
+                    />
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+
+        <Button href="/#" className="shrink-0">
+          Get Started
+        </Button>
       </div>
-
-      <ul className="hidden md:flex items-center justify-between gap-10">
-        {navItems.map((item) => {
-          return (
-            <li key={item.id}>
-              <Link
-                href={item.href}
-                className={`${item.href === pathname ? "border-b-2" : "text-[hsla(215,16%,47%,1)]"} p-1 lg:text-lg`}
-              >
-                {item.name}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-
-      <button className="bg-[hsla(212,80%,42%,1)] md:text-lg text-white p-2 lg:p-4 rounded-2xl cursor-pointer">
-        Get Started
-      </button>
     </header>
   );
 }

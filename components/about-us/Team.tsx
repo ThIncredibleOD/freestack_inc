@@ -1,22 +1,22 @@
 export default function Team() {
   const members = [
     {
-      name: "Obinka Victor",
+      name: "Ayinde Eyitayo Odunayo",
       title: "Founder",
       description:
         "Architecting seamless user experiences and scalable design systems for modern sports platforms. (short Bio)",
       pic: "",
     },
     {
-      name: "Obinka Victor",
-      title: "Founder",
+      name: "Victory Uchechukwu",
+      title: "Chief Operations Officer",
       description:
         "Architecting seamless user experiences and scalable design systems for modern sports platforms. (short Bio)",
       pic: "",
     },
     {
-      name: "Obinka Victor",
-      title: "Founder",
+      name: "",
+      title: "Senior Developer",
       description:
         "Architecting seamless user experiences and scalable design systems for modern sports platforms. (short Bio)",
       pic: "",

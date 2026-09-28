@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import type { LucideIcon } from "lucide-react";
 
@@ -23,6 +24,7 @@ export default function Dropdown({
   menuButtonRef,
 }: DropdownProps) {
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -37,29 +39,45 @@ export default function Dropdown({
       }
     }
 
+    function handleEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        handleClick(false);
+        menuButtonRef.current?.focus();
+      }
+    }
+
     document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
     };
   }, [handleClick, menuButtonRef]);
+
   return (
     <div
       ref={dropdownRef}
-      className="bg-white absolute top-18 left-0 w-50 rounded-xl p-2 shadow-lg"
+      className="animate-rise absolute top-full left-0 z-50 mt-4 w-56 rounded-2xl border border-line bg-white p-2 shadow-xl shadow-ink/10"
     >
-      <nav className="flex flex-col gap-2 text-lg">
+      <nav className="flex flex-col gap-1">
         {itemList.map((item) => {
           const Icon = item.icon;
+          const active = item.href === pathname;
 
           return (
             <Link
               key={item.id}
               href={item.href}
               onClick={() => handleClick(false)}
-              className="flex items-center gap-3 rounded-md p-2 hover:bg-[hsla(210,40%,98%,1)]"
+              aria-current={active ? "page" : undefined}
+              className={`flex items-center gap-3 rounded-xl p-2.5 transition-colors ${
+                active
+                  ? "bg-brand/8 font-medium text-brand"
+                  : "text-ink hover:bg-surface"
+              }`}
             >
-              <Icon size={20} />
+              <Icon size={18} className={active ? "text-brand" : "text-muted"} />
               {item.name}
             </Link>
           );
