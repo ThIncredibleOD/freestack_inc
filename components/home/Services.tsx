@@ -5,30 +5,30 @@ export default function Services() {
   const services = [
     {
       id: 1,
-      title: "Branding",
+      title: "Digital Platforms & Operations",
       description:
-        "Forging memorable digital identities and cohesive design systems.",
+        "Websites, registration systems, databases, and digital player profiles that make your organization easier to manage and discover.",
       icon: Shapes,
     },
     {
       id: 2,
-      title: "UI/UX Design",
+      title: "Performance & Data Analysis",
       description:
-        "Forging memorable digital identities and cohesive design systems.",
+        "Match and player statistics, video analysis, opposition reports, and clear insights to support coaching and player development.",
       icon: PenTool,
     },
     {
       id: 3,
-      title: "Web Development",
+      title: "Creative Media & Storytelling",
       description:
-        "Engineering scalable front-end and robust back-end architecture.",
+        "Photography, video, matchday content, graphics, interviews, and social media that showcase your teams, players, and progress..",
       icon: CodeXml,
     },
     {
       id: 4,
-      title: "Deployment & Support",
+      title: "Branding & Communication",
       description:
-        "Managing seamless cloud hosting and ongoing system maintenance.",
+        "A consistent identity and stronger online presence that help your organization present its people, achievements, and ambitions professionally.",
       icon: Cloud,
     },
   ];
@@ -48,14 +48,14 @@ export default function Services() {
         </Link>
       </div>
 
-      <ul className="flex flex-col gap-4">
+      <ul className="flex w-full flex-col gap-4">
         {services.map((service) => {
           const Icon = service.icon;
 
           return (
             <li
               key={service.id}
-              className="flex gap-4 items-center border border-[hsla(207,90%,61%,1)] py-4 px-2 rounded-xl"
+              className="group flex w-full gap-4 items-center border border-[hsla(207,90%,61%,1)] py-4 px-2 rounded-xl transition-[transform,background-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:bg-[hsla(207,90%,61%,0.1)] hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:transform-none"
             >
               <div className="flex items-center justify-center h-8 w-8 md:h-10 md:w-10 rounded-full bg-[hsla(207,90%,61%,0.1)]">
                 <Icon className="size-5 md:size-6" />

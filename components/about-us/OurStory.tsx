@@ -3,9 +3,9 @@ import Image from "next/image";
 export default function OurStory() {
   const ourStories = [
     {
-      title: "Building Modern Organizations",
+      title: "Why We Do This",
       description:
-        "FreeStack Inc. began as a technology and digital solutions company focused on helping organizations build, manage, and improve their digital presence and operations. We realized that modern brands need more than just standard design—they need a unified approach that combines technology, media, creative solutions, and data to solve practical challenges.",
+        "Running a modern football organization takes more than a website or social media page. Academies and clubs need reliable ways to manage information, share their work, communicate with families and supporters, and help coaches and players learn from performance. FreeStack brings these needs together. We combine software, media, branding, and analysis so organizations can spend less time working across disconnected tools and more time building their teams and opportunities for players.",
       img: "/about-us/story-1.jpg",
     },
     {
