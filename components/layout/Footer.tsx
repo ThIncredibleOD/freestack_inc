@@ -33,7 +33,7 @@ export default function Footer() {
           <nav className="flex flex-col gap-4 text-[hsla(215,16%,47%,1)]">
             <Link href="/">Home</Link>
             <Link href="/services">Services</Link>
-            <Link href="/#">Portfolio</Link>
+            <Link href="/portfolio">Portfolio</Link>
             <Link href="/about-us">About</Link>
           </nav>
         </div>
