@@ -7,21 +7,16 @@ export default function Team() {
     {
       name: "Ayinde Eyitayo Odunayo",
       title: "Director",
-      description: "H",
       pic: "/about-us/ayinde-eyitayo-odunayo.jpg",
     },
     {
       name: "Victory Uchechukwu",
       title: "Chief Operations Officer",
-      description:
-        "COO at FreeStack Inc & Full-Stack Engineer. Passionate about operational execution, scalable backend architecture, and building user-centric, high-performance web products",
       pic: "/about-us/Victory.jpg",
     },
     {
       name: "",
       title: "Senior Developer",
-      description:
-        "Architecting seamless user experiences and scalable design systems for modern sports platforms. (short Bio)",
       pic: "",
     },
   ];
