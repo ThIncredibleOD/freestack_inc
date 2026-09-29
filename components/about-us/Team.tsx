@@ -65,10 +65,6 @@ export default function Team() {
 
                   <p className="font-semibold text-accent">{member.title}</p>
                 </div>
-
-                <p className="text-sm text-muted-invert">
-                  {member.description}
-                </p>
               </li>
             );
           })}
