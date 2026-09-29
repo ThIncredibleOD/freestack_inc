@@ -1,27 +1,62 @@
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Button from "../ui/Button";
+import Pill from "../ui/Pill";
+
 export default function Hero() {
   return (
-    <section className="flex flex-col gap-2 justify-end  min-h-[calc(100vh-5rem)] bg-[url('/services/hero-background.jpg')] bg-cover p-4 md:p-8 lg:p-16">
-      <div className="text-sm md:text-md bg-[hsla(207,90%,61%,0.1)] w-fit py-1 px-2 md:py-2 md:px-4 rounded-full">
-        OUR SERVICES
-      </div>
+    <section className="bg-surface px-4 py-12 md:px-8 md:py-16 lg:px-16 lg:py-20">
+      <div className="mx-auto grid w-full max-w-[85rem] items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+        <div className="flex flex-col items-start gap-5 md:gap-6">
+          <Pill>OUR SERVICES</Pill>
 
-      <h1 className="font-montserrat text-5xl/15 md:text-6xl/18 font-bold md:max-w-2xl">
-        End-to-End Digital Ecosystems.
-      </h1>
+          <h1 className="font-montserrat text-5xl/15 font-bold md:text-6xl/18">
+            End-to-End Digital Ecosystems.
+          </h1>
 
-      <p className="text-[hsla(215,16%,47%,1)] md:max-w-2xl">
-        From structural web engineering to advanced sports performance data, we
-        build scalable, high-performance solutions tailored for modern
-        organizations and elite academies.
-      </p>
+          <span className="h-1 w-14 rounded-full bg-linear-to-r from-brand to-accent" />
 
-      <div className="flex items-center gap-5 md:gap-10">
-        <button className="bg-[hsla(212,80%,42%,1)] md:text-lg text-white p-2 lg:p-4 rounded-2xl cursor-pointer">
-          Get Started
-        </button>
-        <button className="border md:text-lg p-2 lg:p-4 rounded-2xl cursor-pointer">
-          View Our Work
-        </button>
+          <p className="text-muted md:max-w-xl">
+            From structural web engineering to advanced sports performance data,
+            we build scalable, high-performance solutions tailored for modern
+            organizations and elite academies.
+          </p>
+
+          <div className="flex flex-wrap items-center gap-4 md:gap-6">
+            <Button href="/#" size="lg" className="group">
+              Get Started
+              <ArrowRight
+                size={18}
+                strokeWidth={3}
+                className="transition-transform duration-200 group-hover:translate-x-1"
+              />
+            </Button>
+
+            <Button href="/#" variant="outline" size="lg">
+              View Our Work
+            </Button>
+          </div>
+        </div>
+
+        {/*
+          1440x2944 — a very tall portrait. As a `bg-cover` backdrop it was
+          cropped to a thin horizontal slice on desktop, so it now sits in a
+          tall frame where the whole composition reads.
+        */}
+        <div className="relative h-100 overflow-hidden rounded-3xl sm:h-120 lg:h-150">
+          <Image
+            src="/services/hero-background.jpg"
+            alt=""
+            fill
+            loading="eager"
+            sizes="(min-width: 1024px) 45vw, 100vw"
+            className="object-cover object-top"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-linear-to-t from-ink/50 to-transparent"
+          />
+        </div>
       </div>
     </section>
   );

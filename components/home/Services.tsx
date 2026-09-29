@@ -1,5 +1,11 @@
-import { ArrowRight, Cloud, CodeXml, PenTool, Shapes } from "lucide-react";
-import Link from "next/link";
+import {
+  Camera,
+  ChartNoAxesColumnIncreasing,
+  Megaphone,
+  Shapes,
+} from "lucide-react";
+import Section from "../ui/Section";
+import SectionHeading from "../ui/SectionHeading";
 
 export default function Services() {
   const services = [
@@ -15,63 +21,63 @@ export default function Services() {
       title: "Performance & Data Analysis",
       description:
         "Match and player statistics, video analysis, opposition reports, and clear insights to support coaching and player development.",
-      icon: PenTool,
+      icon: ChartNoAxesColumnIncreasing,
     },
     {
       id: 3,
       title: "Creative Media & Storytelling",
       description:
         "Photography, video, matchday content, graphics, interviews, and social media that showcase your teams, players, and progress..",
-      icon: CodeXml,
+      icon: Camera,
     },
     {
       id: 4,
       title: "Branding & Communication",
       description:
         "A consistent identity and stronger online presence that help your organization present its people, achievements, and ambitions professionally.",
-      icon: Cloud,
+      icon: Megaphone,
     },
   ];
 
   return (
-    <section className="flex flex-col gap-4 md:gap-6 bg-[hsla(210,40%,98%,1)] p-4 md:p-8 lg:p-16">
-      <div className="flex justify-between items-center">
-        <h2 className="font-montserrat text-2xl md:text-3xl font-bold">
-          Our Services
-        </h2>
-        <Link
-          href="/#"
-          className="flex items-center gap-2 md:text-lg text-[hsla(212,80%,42%,1)] hover:underline"
-        >
-          view full services
-          <ArrowRight size={18} strokeWidth={3} />
-        </Link>
-      </div>
+    <Section
+      className="bg-surface"
+      innerClassName="flex flex-col gap-10 md:gap-12"
+    >
+      <SectionHeading
+        title="Our Services"
+        action={{ label: "view full services", href: "/services" }}
+      />
 
-      <ul className="flex w-full flex-col gap-4">
+      <ul className="grid gap-6 md:grid-cols-2">
         {services.map((service) => {
           const Icon = service.icon;
 
           return (
             <li
               key={service.id}
-              className="group flex w-full gap-4 items-center border border-[hsla(207,90%,61%,1)] py-4 px-2 rounded-xl transition-[transform,background-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:bg-[hsla(207,90%,61%,0.1)] hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:transform-none"
+              className="group relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-line bg-white p-6 transition duration-300 ease-out hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-ink/5 motion-reduce:transition-none motion-reduce:hover:transform-none md:p-8"
             >
-              <div className="flex items-center justify-center h-8 w-8 md:h-10 md:w-10 rounded-full bg-[hsla(207,90%,61%,0.1)]">
-                <Icon className="size-5 md:size-6" />
+              <span
+                aria-hidden
+                className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-linear-to-r from-brand to-accent transition-transform duration-300 group-hover:scale-x-100 motion-reduce:transition-none"
+              />
+
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-brand transition-colors duration-300 group-hover:bg-brand group-hover:text-white">
+                <Icon className="size-6" />
               </div>
-              <div className="flex flex-col gap-2">
-                <h3 className="font-montserrat text-xl md:text-2xl font-bold">
-                  {service.title}
-                </h3>
-                <p className="text-sm md:text-md text-[hsla(215,16%,47%,1)]">
-                  {service.description}
-                </p>
-              </div>
+
+              <h3 className="font-montserrat text-xl font-bold md:text-2xl">
+                {service.title}
+              </h3>
+
+              <p className="text-sm text-muted md:text-base">
+                {service.description}
+              </p>
             </li>
           );
         })}
       </ul>
-    </section>
+    </Section>
   );
 }

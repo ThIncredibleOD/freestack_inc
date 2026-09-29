@@ -1,4 +1,7 @@
 import Image from "next/image";
+import Pill from "../ui/Pill";
+import Section from "../ui/Section";
+import SectionHeading from "../ui/SectionHeading";
 
 export default function OurServices() {
   const services = [
@@ -69,57 +72,60 @@ export default function OurServices() {
   ];
 
   return (
-    <section className="flex flex-col gap-4 p-4 md:p-8 lg:p-16">
-      <h2 className="font-montserrat text-2xl md:text-3xl font-bold">
-        Our Services
-      </h2>
+    <Section innerClassName="flex flex-col gap-10 md:gap-12">
+      <SectionHeading title="Our Services" />
 
-      <ul className="flex flex-col gap-6">
+      <ul className="flex flex-col gap-10 lg:gap-16">
         {services.map((service, index) => {
           return (
             <li
               key={index}
-              className="group flex w-full flex-col gap-4 rounded-xl border border-transparent p-4 transition-[transform,background-color,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-[hsla(207,90%,61%,0.35)] hover:bg-[hsla(207,90%,61%,0.08)] hover:shadow-xl md:p-6 motion-reduce:transition-none motion-reduce:hover:transform-none"
+              className={`group flex flex-col gap-6 lg:items-center lg:gap-12 ${
+                index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+              }`}
             >
-              <div className="relative w-full h-50 rounded-xl overflow-hidden lg:flex-1">
+              <div className="relative h-56 w-full overflow-hidden rounded-2xl md:h-72 lg:flex-1">
                 <Image
                   src={service.img}
                   alt=""
                   fill
+                  sizes="(min-width: 1024px) 45vw, 100vw"
                   className="object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                 />
-                <div className="absolute inset-0 bg-[hsla(212,80%,42%,0.08)] transition-colors duration-300 group-hover:bg-[hsla(212,80%,42%,0.2)] motion-reduce:transition-none" />
+                <div
+                  aria-hidden
+                  className="absolute inset-0 bg-brand/10 transition-colors duration-300 group-hover:bg-brand/20 motion-reduce:transition-none"
+                />
+                <span className="absolute top-4 left-4 font-montserrat text-4xl font-bold text-white/80 md:text-5xl">
+                  {service.category.number}
+                </span>
               </div>
-              <div className="flex flex-col gap-4 transition-transform duration-300 ease-out group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0">
-                <div className="text-sm md:text-md bg-[hsla(207,90%,61%,0.1)] w-fit py-1 px-2 md:py-2 md:px-4 rounded-full">
-                  {service.category.number} / {service.category.label}
-                </div>
-                <h3 className="font-montserrat text-xl font-bold">
+
+              <div className="flex flex-col items-start gap-4 lg:flex-1">
+                <Pill size="sm">{service.category.label}</Pill>
+
+                <h3 className="font-montserrat text-xl font-bold md:text-2xl">
                   {service.title}
                 </h3>
-                <p className="text-[hsla(215,16%,47%,1)]">
-                  {service.description}
-                </p>
 
-                <div className="flex flex-wrap gap-2">
-                  {service.highlights.map((highlight, i) => {
-                    return (
-                      <div key={i} className="flex gap-2 items-center">
-                        <p className=" text-sm">{highlight}</p>
-                        <p
-                          className={`${i === service.highlights.length - 1 ? "hidden" : "block"}`}
-                        >
-                          &bull;
-                        </p>
-                      </div>
-                    );
-                  })}
-                </div>
+                <span className="h-1 w-10 rounded-full bg-linear-to-r from-brand to-accent" />
+
+                <p className="text-muted">{service.description}</p>
+
+                <ul className="flex flex-wrap gap-2">
+                  {service.highlights.map((highlight) => (
+                    <li key={highlight}>
+                      <Pill tone="neutral" size="sm">
+                        {highlight}
+                      </Pill>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </li>
           );
         })}
       </ul>
-    </section>
+    </Section>
   );
 }

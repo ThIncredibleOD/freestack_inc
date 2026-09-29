@@ -1,24 +1,38 @@
+import { Target } from "lucide-react";
+
 export default function CompanyGoal() {
   return (
-    <section className="bg-[hsla(212,52%,14%,1)] text-white flex flex-col gap-4 p-4 m-4 md:p-8 md:m-8 lg:m-16">
-      <h2 className="font-montserrat text-2xl font-bold">The FreeStack Goal</h2>
-      <p className="text-[hsla(215,16%,47%,1)]">
-<<<<<<< HEAD
-        Our goal is simple: to help sports organizations become more
-        organized, visible, data-driven, and digitally competitive. We go beyond
-        standard web design by building integrated digital ecosystems. By
-        combining matchday media, communication platforms, and advanced
-        performance analysis, we equip sports academies and clubs with the
-        technology they need to operate at an elite level and elevate their
-        player development.
-=======
-       We want football organizations to be more organized, 
-       visible, data-informed, and equipped to develop their players. 
-       We create connected, practical solutions that help teams communicate 
-       professionally, understand performance, and build sustainable digital 
-       operations.
->>>>>>> 9bb7112b998fcce9d6731567c215711a773c6769
-      </p>
-    </section>
+    <div className="px-4 py-8 md:px-8 md:py-10 lg:px-16 lg:py-12">
+      <section className="relative mx-auto w-full max-w-[85rem] overflow-hidden rounded-3xl bg-ink px-6 py-12 text-white md:px-12 md:py-16">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-brand/30 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-accent/20 blur-3xl"
+        />
+
+        <div className="relative flex flex-col items-start gap-5">
+          <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/20">
+            <Target className="size-6 text-accent" />
+          </span>
+
+          <h2 className="font-montserrat text-2xl font-bold md:text-3xl">
+            The FreeStack Goal
+          </h2>
+
+          <span className="h-1 w-14 rounded-full bg-linear-to-r from-accent to-white/40" />
+
+          <p className="max-w-3xl text-muted-invert md:text-lg">
+            We want sports organizations to be more organized, visible,
+            data-informed, and equipped to develop their players. We create
+            connected, practical solutions that help teams communicate
+            professionally, understand performance, and build sustainable
+            digital operations.
+          </p>
+        </div>
+      </section>
+    </div>
   );
 }

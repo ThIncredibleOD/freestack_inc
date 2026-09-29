@@ -38,7 +38,7 @@ export default function Footer() {
               width={240}
               height={101}
               alt="FreeStack"
-              className="h-12 w-auto"
+              className="h-12 w-auto self-start"
             />
             <p className="text-muted-invert">
               An end-to-end digital agency engineering scalable web products from

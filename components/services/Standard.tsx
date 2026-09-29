@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Section from "../ui/Section";
+import SectionHeading from "../ui/SectionHeading";
 
 export default function Standard() {
   const standards = [
@@ -29,41 +31,49 @@ export default function Standard() {
   ];
 
   return (
-    <section className="flex flex-col gap-4 p-4 md:p-8 lg:p-16">
-      <h2 className="font-montserrat text-2xl md:text-3xl font-bold">
-        The FreeStack Standard
-      </h2>
-      <p className="text-[hsla(215,16%,47%,1)] md:max-w-2xl">
-        Explore the core metrics that drive our commitment to building
-        high-performance digital ecosystems for the modern sports industry.
-      </p>
+    <Section
+      className="bg-surface"
+      innerClassName="flex flex-col gap-10 md:gap-12"
+    >
+      <SectionHeading
+        title="The FreeStack Standard"
+        description="Explore the core metrics that drive our commitment to building high-performance digital ecosystems for the modern sports industry."
+      />
 
-      <ul className="flex flex-col gap-6">
+      <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {standards.map((standard, index) => {
           return (
-            <li key={index} className="flex flex-col gap-2">
-              <p className="font-montserrat text-[hsla(212,80%,42%,1)] font-bold text-4xl">
+            <li
+              key={index}
+              className="group flex flex-col gap-2 rounded-2xl border border-line bg-white p-6 transition duration-300 ease-out hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-ink/5 motion-reduce:transition-none motion-reduce:hover:transform-none"
+            >
+              <p className="font-montserrat text-4xl font-bold text-brand md:text-5xl">
                 {standard.stat}
               </p>
+
               <h3 className="font-montserrat text-lg font-bold">
                 {standard.title}
               </h3>
-              <p className="text-[hsla(215,16%,47%,1)] md:max-w-2xl">
-                {standard.description}
-              </p>
+
+              <p className="text-sm text-muted">{standard.description}</p>
             </li>
           );
         })}
       </ul>
 
-      <div className="relative w-full h-80 rounded-xl overflow-hidden lg:flex-1">
+      <div className="relative h-64 w-full overflow-hidden rounded-3xl md:h-96">
         <Image
           src="/services/standard.jpg"
           alt=""
           fill
+          sizes="(min-width: 1360px) 85rem, 100vw"
           className="object-cover"
         />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-linear-to-t from-ink/60 to-transparent"
+        />
       </div>
-    </section>
+    </Section>
   );
 }

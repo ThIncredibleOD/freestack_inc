@@ -1,24 +1,21 @@
+import { User } from "lucide-react";
 import Image from "next/image";
+import SectionHeading from "../ui/SectionHeading";
 
 export default function Team() {
   const members = [
     {
       name: "Ayinde Eyitayo Odunayo",
-<<<<<<< HEAD
-      title: "Founder",
-=======
       title: "Director",
->>>>>>> 9bb7112b998fcce9d6731567c215711a773c6769
-      description:
-        "Architecting seamless user experiences and scalable design systems for modern sports platforms.",
+      description: "H",
       pic: "/about-us/ayinde-eyitayo-odunayo.jpg",
     },
     {
       name: "Victory Uchechukwu",
       title: "Chief Operations Officer",
       description:
-        "Architecting seamless user experiences and scalable design systems for modern sports platforms. (short Bio)",
-      pic: "",
+        "COO at FreeStack Inc & Full-Stack Engineer. Passionate about operational execution, scalable backend architecture, and building user-centric, high-performance web products",
+      pic: "/about-us/Victory.jpg",
     },
     {
       name: "",
@@ -30,45 +27,58 @@ export default function Team() {
   ];
 
   return (
-    <section className="bg-[url('/about-us/team-background.jpg')] bg-cover bg-center flex flex-col gap-6 p-4 md:p-8 lg:p-16 mb-10">
-      <h2 className="font-montserrat text-white text-2xl font-bold">
-        Meet The Team
-      </h2>
+    <section className="relative bg-[url('/about-us/team-background.jpg')] bg-cover bg-center">
+      {/* Dim the pitch photo so the white heading and cards stay readable. */}
+      <div aria-hidden className="absolute inset-0 bg-ink/60" />
 
-      <ul className="flex flex-wrap lg:justify-between gap-6">
-        {members.map((member, index) => {
-          return (
-            <li
-              key={index}
-              className="bg-[hsla(212,52%,14%,1)] flex flex-col gap-4 p-12 rounded-2xl w-full lg:w-[calc(50%-12px)] max-w-137.5"
-            >
-              <div className="relative h-60 w-full overflow-hidden rounded-2xl bg-black">
-                {member.pic ? (
-                  <Image
-                    src={member.pic}
-                    alt={member.name}
-                    fill
-                    className="object-cover object-center"
-                  />
-                ) : null}
-              </div>
+      <div className="relative mx-auto flex w-full max-w-[85rem] flex-col gap-10 px-4 py-12 md:gap-12 md:px-8 md:py-16 lg:px-16 lg:py-20">
+        <SectionHeading title="Meet The Team" tone="dark" />
 
-              <h3 className="font-montserrat text-white text-xl font-bold">
-                {member.name}
-              </h3>
+        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {members.map((member, index) => {
+            return (
+              <li
+                key={index}
+                className="group flex flex-col gap-4 rounded-2xl bg-ink p-5 ring-1 ring-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30 hover:ring-accent/40 motion-reduce:transition-none motion-reduce:hover:transform-none md:p-6"
+              >
+                {/* Both headshots are portrait, so the frame is too. */}
+                <div className="relative aspect-4/5 w-full overflow-hidden rounded-xl bg-white/5">
+                  {member.pic ? (
+                    <Image
+                      src={member.pic}
+                      alt={member.name}
+                      fill
+                      sizes="(min-width: 1024px) 430px, (min-width: 640px) 45vw, 100vw"
+                      className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center">
+                      <User
+                        className="size-12 text-white/25"
+                        strokeWidth={1.5}
+                      />
+                    </div>
+                  )}
+                </div>
 
-              <p className="text-[hsla(207,90%,61%,1)] font-bold">
-                {member.title}
-              </p>
+                <div className="flex flex-col gap-1">
+                  {member.name && (
+                    <h3 className="font-montserrat text-xl font-bold text-white">
+                      {member.name}
+                    </h3>
+                  )}
 
-              <p className="text-[hsla(0,0%,100%,0.8)]">
-                Architecting seamless user experiences and scalable design
-                systems for modern sports platforms. (short Bio)
-              </p>
-            </li>
-          );
-        })}
-      </ul>
+                  <p className="font-semibold text-accent">{member.title}</p>
+                </div>
+
+                <p className="text-sm text-muted-invert">
+                  {member.description}
+                </p>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </section>
   );
 }

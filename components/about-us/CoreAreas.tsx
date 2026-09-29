@@ -4,6 +4,8 @@ import {
   CodeXml,
   Megaphone,
 } from "lucide-react";
+import Section from "../ui/Section";
+import SectionHeading from "../ui/SectionHeading";
 
 export default function CoreAreas() {
   const areas = [
@@ -34,31 +36,34 @@ export default function CoreAreas() {
   ];
 
   return (
-    <section className="bg-[hsla(210,40%,98%,1)] flex flex-col gap-6 p-4 md:p-8 lg:p-16">
-      <h2 className="font-montserrat text-2xl font-bold">Our Core Areas</h2>
+    <Section
+      className="bg-surface"
+      innerClassName="flex flex-col gap-10 md:gap-12"
+    >
+      <SectionHeading title="Our Core Areas" />
 
-      <ul className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <ul className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         {areas.map((area, index) => {
           const Icon = area.icon;
 
           return (
             <li
               key={index}
-              className="bg-[hsla(0,0%,100%,1)] flex flex-col gap-4 p-4 border-l-2 border-l-[hsla(207,90%,61%,1)] rounded-xl shadow-md"
+              className="group flex flex-col gap-4 rounded-2xl border-l-2 border-l-accent bg-white p-6 shadow-md transition duration-300 ease-out hover:-translate-y-1 hover:border-l-brand hover:shadow-xl hover:shadow-ink/5 motion-reduce:transition-none motion-reduce:hover:transform-none md:p-8"
             >
-              <div className="bg-[hsla(207,90%,61%,0.1)] flex items-center justify-center h-10 w-10 rounded-full">
-                <Icon />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-brand transition-colors duration-300 group-hover:bg-brand group-hover:text-white">
+                <Icon className="size-6" />
               </div>
 
               <h3 className="font-montserrat text-xl font-bold">
                 {area.title}
               </h3>
 
-              <p>{area.description}</p>
+              <p className="text-muted">{area.description}</p>
             </li>
           );
         })}
       </ul>
-    </section>
+    </Section>
   );
 }
