@@ -22,14 +22,14 @@ export default function Header() {
   const navItems = [
     { id: 1, name: "Home", href: "/" },
     { id: 2, name: "Services", href: "/services" },
-    { id: 3, name: "Portfolio", href: "/#" },
+    { id: 3, name: "Portfolio", href: "/portfolio" },
     { id: 4, name: "About Us", href: "/about-us" },
   ];
 
   const dropdownNavItems = [
     { id: 1, name: "Home", href: "/", icon: House },
     { id: 2, name: "Services", href: "/services", icon: BriefcaseBusiness },
-    { id: 3, name: "Portfolio", href: "/#", icon: FolderOpen },
+    { id: 3, name: "Portfolio", href: "/portfolio", icon: FolderOpen },
     { id: 4, name: "About Us", href: "/about-us", icon: Users },
   ];
 
