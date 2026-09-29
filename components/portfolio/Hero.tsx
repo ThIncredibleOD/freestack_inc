@@ -1,26 +1,50 @@
+import { ArrowRight } from "lucide-react";
+import Button from "../ui/Button";
+import Pill from "../ui/Pill";
+
 export default function Hero() {
   return (
-    <section className="flex flex-col gap-2 md:gap-6 justify-end min-h-[calc(100vh-5rem)] md:min-h-120 bg-[url('/services/hero-background-mobile.jpg')] md:bg-[url('/services/hero-background-desktop.png')] bg-cover p-4 md:p-8 lg:p-16">
-      <div className="text-sm md:text-md bg-[hsla(207,90%,61%,0.1)] w-fit py-1 px-2 md:py-2 md:px-4 rounded-full">
-        OUR WORK
-      </div>
+    <section className="relative bg-surface bg-[url('/services/hero-background-mobile.jpg')] bg-cover bg-center md:bg-[url('/services/hero-background-desktop.png')]">
+      {/* Same scrim as the services hero — see the note there. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-linear-to-t from-white via-white/80 to-white/40 md:bg-linear-to-r md:from-white md:via-white/75 md:to-transparent"
+      />
 
-      <h1 className="font-montserrat text-5xl/15 md:text-6xl/18 font-bold md:max-w-2xl">
-        Featured Deployments
-      </h1>
+      <div className="relative mx-auto flex min-h-[calc(100vh-5rem)] w-full max-w-[85rem] flex-col justify-end gap-5 px-4 py-16 md:min-h-140 md:justify-center md:gap-6 md:px-8 md:py-24 lg:px-16">
+        <Pill>OUR WORK</Pill>
 
-      <p className="text-[hsla(215,16%,47%,1)] md:max-w-2xl">
-        Explore how we architect scalable digital solutions and data ecosystems
-        for modern sports organizations.
-      </p>
+        <h1 className="font-montserrat text-5xl/15 font-bold md:max-w-2xl md:text-6xl/18">
+          Featured Deployments
+        </h1>
 
-      <div className="flex items-center gap-5 md:gap-10">
-        <button className="bg-[hsla(212,80%,42%,1)] md:text-lg text-white p-2 lg:p-4 rounded-2xl cursor-pointer">
-          Get Started
-        </button>
-        <button className="border md:text-lg p-2 lg:p-4 rounded-2xl cursor-pointer">
-          View Our Work
-        </button>
+        <span className="h-1 w-14 rounded-full bg-linear-to-r from-brand to-accent" />
+
+        <p className="text-muted md:max-w-2xl">
+          Explore how we architect scalable digital solutions and data ecosystems
+          for modern sports organizations.
+        </p>
+
+        <div className="flex flex-wrap items-center gap-4 md:gap-6">
+          <Button href="/#" size="lg" className="group">
+            Get Started
+            <ArrowRight
+              size={18}
+              strokeWidth={3}
+              className="transition-transform duration-200 group-hover:translate-x-1"
+            />
+          </Button>
+
+          {/* Was a dead <button>; now scrolls to the list further down the page. */}
+          <Button
+            href="#projects"
+            variant="outline"
+            size="lg"
+            className="bg-white/70 backdrop-blur-sm"
+          >
+            View Our Work
+          </Button>
+        </div>
       </div>
     </section>
   );

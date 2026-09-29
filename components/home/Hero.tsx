@@ -38,7 +38,7 @@ export default function Hero() {
           </Button>
 
           <Button
-            href="/#"
+            href="/portfolio"
             variant="outline"
             size="lg"
             className="bg-white/70 backdrop-blur-sm"
