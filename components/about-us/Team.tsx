@@ -15,9 +15,9 @@ export default function Team() {
       pic: "/about-us/Victory.jpg",
     },
     {
-      name: "",
+      name: "Mubarak Idris",
       title: "Senior Developer",
-      pic: "",
+      pic: "/about-us/Mubarak.jpg",
     },
   ];
 
