@@ -13,7 +13,7 @@ export default function Portfolio() {
     >
       <SectionHeading
         title="Selected Work"
-        action={{ label: "view all projects", href: "/#" }}
+        action={{ label: "view all projects", href: "/portfolio" }}
       />
 
       <ul>
