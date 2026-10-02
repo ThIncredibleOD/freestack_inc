@@ -21,7 +21,7 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0 bg-linear-to-t from-white via-white/80 to-white/40 md:bg-linear-to-r md:from-white md:via-white/75 md:to-transparent"
       />
 
-      <div className="relative mx-auto flex min-h-[calc(100vh-5rem)] w-full max-w-[85rem] flex-col justify-end gap-5 px-4 py-16 md:min-h-140 md:justify-center md:gap-6 md:px-8 md:py-24 lg:px-16">
+      <div className="relative mx-auto flex min-h-[calc(100vh-5rem)] w-full max-w-340 flex-col justify-end gap-5 px-4 py-16 md:min-h-140 md:justify-center md:gap-6 md:px-8 md:py-24 lg:px-16">
         <Pill>OUR SERVICES</Pill>
 
         <h1 className="font-montserrat text-5xl/15 font-bold md:max-w-2xl md:text-6xl/18">

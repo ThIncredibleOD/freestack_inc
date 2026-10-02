@@ -15,9 +15,9 @@ export default function Team() {
       pic: "/about-us/Victory.jpg",
     },
     {
-      name: "",
+      name: "Mubarak Idris",
       title: "Senior Developer",
-      pic: "",
+      pic: "/about-us/Mubarak.jpg",
     },
   ];
 
@@ -26,7 +26,7 @@ export default function Team() {
       {/* Dim the pitch photo so the white heading and cards stay readable. */}
       <div aria-hidden className="absolute inset-0 bg-ink/60" />
 
-      <div className="relative mx-auto flex w-full max-w-[85rem] flex-col gap-10 px-4 py-12 md:gap-12 md:px-8 md:py-16 lg:px-16 lg:py-20">
+      <div className="relative mx-auto flex w-full max-w-340 flex-col gap-10 px-4 py-12 md:gap-12 md:px-8 md:py-16 lg:px-16 lg:py-20">
         <SectionHeading title="Meet The Team" tone="dark" />
 
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
