@@ -12,7 +12,7 @@ export default function Hero() {
       />
 
       <div className="relative mx-auto flex min-h-120 w-full max-w-[85rem] flex-col justify-center gap-5 px-4 py-16 md:min-h-140 md:gap-6 md:px-8 md:py-24 lg:px-16">
-        <Pill>FOOTBALL, BUILT FOR THE DIGITAL AGE</Pill>
+        <Pill>BUILT FOR THE DIGITAL AGE</Pill>
 
         <h1 className="font-montserrat text-5xl/15 font-bold md:max-w-2xl md:text-6xl/18">
           A Stronger Team <br />
