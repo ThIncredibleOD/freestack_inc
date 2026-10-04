@@ -20,14 +20,14 @@ export default function Portfolio() {
         <li className="group grid gap-8 overflow-hidden rounded-3xl border border-line bg-white p-5 transition duration-300 ease-out hover:border-accent/50 hover:shadow-xl hover:shadow-ink/5 motion-reduce:transition-none md:p-8 lg:grid-cols-2 lg:items-center lg:gap-12">
           <div className="flex items-end justify-center overflow-hidden rounded-2xl bg-[hsla(52,40%,36%,1)] p-8 md:p-10">
             <Image
-              src="/works/humanity-desktop.png"
+              src="/works/peakline-desktop.png"
               width={920}
               height={657}
               alt="Peakline Sports team registration platform on desktop"
               className="w-full max-w-sm rounded-lg shadow-2xl transition-transform duration-500 ease-out group-hover:-translate-y-1 motion-reduce:transition-none motion-reduce:group-hover:transform-none"
             />
             <Image
-              src="/works/humanity-mobile.png"
+              src="/works/peakline-mobile.png"
               width={330}
               height={658}
               alt="Peakline Sports platform on mobile"
