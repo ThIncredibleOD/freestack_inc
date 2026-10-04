@@ -9,17 +9,16 @@ export const projects: Project[] = [
         desktop: "/works/peakline-desktop.png",
         mobile: "/works/peakline-mobile.png",
       },
-      description:
-        "Olive-green background showing a fashion website mockup on a desktop and a phone, with the headline 'BOLD BY DESIGN.'",
+      description: "Peakline Sports platform on mobile",
     },
-    category: "Ecommerce, Branding",
-    title: "Humanity Fashion Website",
+    category: "Football",
+    title: "Peakline Sports",
     description:
-      "Crafting a memorable digital identity and a blazing-fast, high-converting checkout experience for a global apparel brand.",
-    techStack: ["Branding", "Figma", "Next.js"],
+      "A platform for teams to register for a football foundation cup",
+    techStack: ["Foundation", "Football", "Sports"],
     cta: {
       label: "Read Case Study",
-      href: "",
+      href: "/#",
     },
   },
 ];
