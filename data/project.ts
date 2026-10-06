@@ -19,7 +19,7 @@ export const projects: Project[] = [
     techStack: ["React", "Vite", "Tailwind CSS", "Supabase"],
     cta: {
       label: "View Live Site",
-      href: "https://paddysco.vercel.app/",
+      href: "/paddysco",
     },
   },
   {
