@@ -26,20 +26,20 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       >
         {desktop ? (
           <>
-            {/* 920x657 and 330x658 — both kept at their real ratios. */}
+            {/* Dimensions come from the data so each screenshot keeps its real ratio. */}
             <Image
-              src={desktop}
-              width={920}
-              height={657}
+              src={desktop.url}
+              width={desktop.width}
+              height={desktop.height}
               alt={project.banner.description}
               className="w-full max-w-sm rounded-lg shadow-2xl transition-transform duration-500 ease-out group-hover:-translate-y-1 motion-reduce:transition-none motion-reduce:group-hover:transform-none"
             />
             {/* Same screenshot as above, so it adds nothing for a screen reader. */}
             {mobile && (
               <Image
-                src={mobile}
-                width={330}
-                height={658}
+                src={mobile.url}
+                width={mobile.width}
+                height={mobile.height}
                 alt=""
                 className="-ml-10 w-20 shrink-0 rounded-lg shadow-2xl transition-transform duration-500 ease-out group-hover:-translate-y-2 motion-reduce:transition-none motion-reduce:group-hover:transform-none md:w-24"
               />
