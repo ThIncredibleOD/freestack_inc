@@ -6,7 +6,7 @@ export const projects: Project[] = [
     banner: {
       type: "image",
       src: {
-        // Add /works/paddysco-desktop.png and /works/paddysco-mobile.png here.
+        // Add paddysco-desktop.png / paddysco-mobile.png with their real pixel sizes.
       },
       description:
         "PaddySco Sports player registration form shown on desktop and mobile.",
@@ -27,65 +27,19 @@ export const projects: Project[] = [
     banner: {
       type: "image",
       src: {
-        desktop: "/works/humanity-desktop.png",
-        mobile: "/works/humanity-mobile.png",
+        desktop: { url: "/works/peakline-desktop.png", width: 1026, height: 903 },
+        mobile: { url: "/works/peakline-mobile.png", width: 585, height: 1184 },
       },
-      description:
-        "Olive-green background showing a fashion website mockup on a desktop and a phone, with the headline 'BOLD BY DESIGN.'",
-      panel: "hsla(52, 40%, 36%, 1)",
+      description: "Peakline Sports platform on mobile",
     },
-    category: "Ecommerce, Branding",
-    title: "Humanity Fashion Website",
+    category: "Football",
+    title: "Peakline Sports",
     description:
-      "Crafting a memorable digital identity and a blazing-fast, high-converting checkout experience for a global apparel brand.",
-    techStack: ["Branding", "Figma", "Next.js"],
+      "A platform for teams to register for a football foundation cup",
+    techStack: ["Foundation", "Football", "Sports"],
     cta: {
       label: "Read Case Study",
-      href: "",
-    },
-  },
-  {
-    id: 3,
-    banner: {
-      type: "image",
-      src: {
-        desktop: "/works/humanity-desktop.png",
-        mobile: "/works/humanity-mobile.png",
-      },
-      description:
-        "Olive-green background showing a fashion website mockup on a desktop and a phone, with the headline 'BOLD BY DESIGN.'",
-      panel: "hsla(52, 40%, 36%, 1)",
-    },
-    category: "Ecommerce, Branding",
-    title: "Humanity Fashion Website",
-    description:
-      "Crafting a memorable digital identity and a blazing-fast, high-converting checkout experience for a global apparel brand.",
-    techStack: ["Branding", "Figma", "Next.js"],
-    cta: {
-      label: "Read Case Study",
-      href: "",
-    },
-  },
-  {
-    id: 4,
-    banner: {
-      type: "image",
-      src: {
-        desktop: "/works/humanity-desktop.png",
-        mobile: "/works/humanity-mobile.png",
-      },
-      description:
-        "Olive-green background showing a fashion website mockup on a desktop and a phone, with the headline 'BOLD BY DESIGN.'",
-      panel: "hsla(52, 40%, 36%, 1)",
-    },
-    category: "Ecommerce, Branding",
-    title: "Humanity Fashion Website",
-    description:
-      "Crafting a memorable digital identity and a blazing-fast, high-converting checkout experience for a global apparel brand.",
-    techStack: ["Branding", "Figma", "Next.js"],
-    cta: {
-      label: "Read Case Study",
-      href: "",
+      href: "/#",
     },
   },
 ];
