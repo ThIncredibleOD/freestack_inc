@@ -6,11 +6,16 @@ export const projects: Project[] = [
     banner: {
       type: "image",
       src: {
-        // Add paddysco-desktop.png / paddysco-mobile.png with their real pixel sizes.
+        desktop: {
+          url: "/works/paddysco-desktop.png",
+          width: 1280,
+          height: 1127,
+        },
+        mobile: { url: "/works/paddysco-mobile.png", width: 585, height: 1184 },
       },
       description:
-        "PaddySco Sports player registration form shown on desktop and mobile.",
-      panel: "#0b0e14",
+        "PaddySco Sports player registration form, step 1 of 4, shown on desktop and mobile.",
+      panel: "#1a5ea7",
     },
     category: "Sports Tech, Web App",
     title: "PaddySco Sports Scouting Network",
@@ -19,7 +24,7 @@ export const projects: Project[] = [
     techStack: ["React", "Vite", "Tailwind CSS", "Supabase"],
     cta: {
       label: "View Live Site",
-      href: "/paddysco",
+      href: "https://paddysco.vercel.app/",
     },
   },
   {

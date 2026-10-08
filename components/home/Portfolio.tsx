@@ -1,11 +1,7 @@
-import { ArrowUpRight } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import Pill from "../ui/Pill";
-import Section from "../ui/Section";
-import SectionHeading from "../ui/SectionHeading";
 import { projects } from "@/data/project";
 import ProjectCard from "../ui/ProjectCard";
+import Section from "../ui/Section";
+import SectionHeading from "../ui/SectionHeading";
 
 export default function Portfolio() {
   return (
@@ -18,7 +14,7 @@ export default function Portfolio() {
         action={{ label: "view all projects", href: "/portfolio" }}
       />
 
-      <ul>
+      <ul className="flex flex-col gap-6 md:gap-8">
         {projects.map((project) => {
           return <ProjectCard key={project.id} project={project} />;
         })}
